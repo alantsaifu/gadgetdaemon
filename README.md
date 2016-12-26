@@ -21,4 +21,3 @@ Because PID != SID our process can't take control of a TTY again
 Reading the syslog:
 Locate your syslog file. Mine is here: /var/log/syslog
 Do a: grep firstdaemon /var/log/syslog
-
