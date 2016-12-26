@@ -5,11 +5,10 @@ Start the daemon: ./gadgetdaemon
 
 Check if everything is working properly: ps xj | grep gadgetdaemon  
 The output should be similar to this one:  
-+------+------+------+------+-----+-------+------+------+------+-----+  
-| PPID | PID  | PGID | SID  | TTY | TPGID | STAT | UID  | TIME | CMD |  
-+------+------+------+------+-----+-------+------+------+------+-----+  
-|____1 | 3387 | 3386 | 3386 |____?|____-1|____S | 1000 | 0:00 |___./|  
-+------+------+------+------+-----+-------+------+------+------+-----+  
+
+| PPID     | PID | PGID   |SID   |TTY   |TPGID   |STAT   |UID   |TIME   |CMD   |
+| :------- | ----: | ----: | ----: | ----: | ----: | ----: | ----: | ----: | :---: |
+|     1 | 3387 |  3386    |  3386    |  ?    |  -1    |  S    |  1000    |  0:00    |  ./    |
 
 What you should see here is:  
 The daemon has no controlling terminal (TTY = ?)  
