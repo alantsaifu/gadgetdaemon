@@ -1,7 +1,6 @@
 /*
- * daemonize.c
- * This example daemonizes a process, writes a few log messages,
- * sleeps 20 seconds and terminates afterwards.
+ * gadgetdaemon.c
+ * This example daemonizes a process, doing a gadget daemon.
  */
 
 #include <stdio.h>
@@ -73,8 +72,9 @@ int main()
     {
         //TODO: Insert daemon code here.
         syslog (LOG_NOTICE, "First daemon started.");
-        sleep (20);
-        break;
+        
+	//sleep (20);
+        //break;
     }
 
     syslog (LOG_NOTICE, "First daemon terminated.");
