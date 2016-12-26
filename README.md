@@ -1,5 +1,6 @@
+# gadgetdaemon
 
-Compile the code: gcc -o gadgetdaemon gadgetdaemon.c
+Compile the code: gcc -o gadgetdaemon daemonize.c
 Start the daemon: ./gadgetdaemon
 
 Check if everything is working properly: ps xj | grep gadgetdaemon
