@@ -11,6 +11,8 @@
 #include <sys/stat.h>
 #include <syslog.h>
 
+#define ECHOSTRFILE "find /home/member | wc -l >> /home/member/gadgetdaemon.txt"
+
 static void skeleton_daemon()
 {
     pid_t pid;
@@ -61,19 +63,25 @@ static void skeleton_daemon()
     }
 
     /* Open the log file */
-    openlog ("firstdaemon", LOG_PID, LOG_DAEMON);
+    openlog ("gadgetdaemon", LOG_PID, LOG_DAEMON);
 }
 
 int main()
 {
+    FILE *pp;
     skeleton_daemon();
-
+    syslog (LOG_NOTICE, "First daemon started.");
+    
     while (1)
     {
         //TODO: Insert daemon code here.
-        syslog (LOG_NOTICE, "First daemon started.");
-        
-	//sleep (20);
+        if ((pp = popen(ECHOSTRFILE, "r")) == NULL) {  
+            printf("popen() error!\n");  
+            exit(1);  
+        } 
+
+        pclose(pp);     
+	    sleep (20);
         //break;
     }
 
@@ -82,3 +90,4 @@ int main()
 
     return EXIT_SUCCESS;
 }
+
